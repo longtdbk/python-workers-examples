@@ -10,7 +10,6 @@ dependencies = [
     "markupsafe",
     "jinja2",
 ]
-
 [dependency-groups]
 dev = [
     "workers-py",
