@@ -5,12 +5,16 @@
 #    async def fetch(self, request):
 #        return Response("Hello world!")
 
-import jinja2
+#import jinja2
+from jinja2 import Template
+
 from fastapi import FastAPI, Request
 from workers import WorkerEntrypoint
 
-environment = jinja2.Environment()
-template = environment.from_string("Hello, {{ name }}!")
+#environment = jinja2.Environment()
+#template = environment.from_string("Hello, {{ name }}!")
+template_str = "Hello, {{ name }}!"
+template = Template(template_str)
 
 app = FastAPI()
 
