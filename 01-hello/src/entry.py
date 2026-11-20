@@ -5,15 +5,12 @@ from workers import WorkerEntrypoint, Response
 #    async def fetch(self, request):
 #        return Response("Hello world!")
 
-from jinja2 import Template
+#from jinja2 import Template
 
 from fastapi import FastAPI, Request
 from workers import WorkerEntrypoint
 
-environment = jinja2.Environment()
-template = environment.from_string("Hello, {{ name }}!")
-template_str = "Hello, {{ name }}!"
-template = Template(template_str)
+
 
 app = FastAPI()
 
@@ -39,6 +36,10 @@ async def env(req: Request):
 
 class Default(WorkerEntrypoint):
     async def fetch(self, request):
-        import asgi
-        #from jinja2 import Template    
+        #import asgi
+        from jinja2 import Template 
+        environment = jinja2.Environment()
+        template = environment.from_string("Hello, {{ name }}!")
+        template_str = "Hello, {{ name }}!"
+        template = Template(template_str)
         return await asgi.fetch(app, request.js_object, self.env)
