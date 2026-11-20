@@ -11,8 +11,8 @@ from jinja2 import Template
 from fastapi import FastAPI, Request
 from workers import WorkerEntrypoint
 
-#environment = jinja2.Environment()
-#template = environment.from_string("Hello, {{ name }}!")
+environment = jinja2.Environment()
+template = environment.from_string("Hello, {{ name }}!")
 template_str = "Hello, {{ name }}!"
 template = Template(template_str)
 
