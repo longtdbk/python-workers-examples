@@ -7,12 +7,11 @@ from workers import WorkerEntrypoint, Response
 
 #from jinja2 import Template
 
-from fastapi import FastAPI, Request
-from workers import WorkerEntrypoint
 
 
 
-app = FastAPI()
+
+
 
 
 @app.get("/")
@@ -38,6 +37,8 @@ class Default(WorkerEntrypoint):
     async def fetch(self, request):
         #import asgi
         from jinja2 import Template 
+        from fastapi import FastAPI, Request
+        app = FastAPI()
         
         #environment = jinja2.Environment()
         #template = environment.from_string("Hello, {{ name }}!")
