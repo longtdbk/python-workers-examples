@@ -5,7 +5,6 @@ from workers import WorkerEntrypoint, Response
 #    async def fetch(self, request):
 #        return Response("Hello world!")
 
-import jinja2
 from jinja2 import Template
 
 from fastapi import FastAPI, Request
@@ -41,5 +40,5 @@ async def env(req: Request):
 class Default(WorkerEntrypoint):
     async def fetch(self, request):
         import asgi
-
+        #from jinja2 import Template    
         return await asgi.fetch(app, request.js_object, self.env)
