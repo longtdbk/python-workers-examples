@@ -8,9 +8,7 @@ from workers import WorkerEntrypoint, Response
 #from jinja2 import Template
 
 
-
-
-
+app = FastAPI()
 
 
 
@@ -38,7 +36,7 @@ class Default(WorkerEntrypoint):
         #import asgi
         from jinja2 import Template 
         from fastapi import FastAPI, Request
-        app = FastAPI()
+
         
         #environment = jinja2.Environment()
         #template = environment.from_string("Hello, {{ name }}!")
