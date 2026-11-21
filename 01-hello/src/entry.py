@@ -1,12 +1,5 @@
 from workers import WorkerEntrypoint, Response
-
-
-#class Default(WorkerEntrypoint):
-#    async def fetch(self, request):
-#        return Response("Hello world!")
-
-#from jinja2 import Template
-
+from fastapi import FastAPI, Request
 
 app = FastAPI()
 
